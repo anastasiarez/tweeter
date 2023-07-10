@@ -1,0 +1,35 @@
+.new-tweet div label{
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  
+}
+
+.new-tweet textarea {
+  background-color: #f4f1ec;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  border-bottom: 3px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.new-tweet button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'Bungee';
+}
+
+.new-tweet output{
+  color: black;
+  font-family: 'Bungee';
+}
+
+.new-tweet div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

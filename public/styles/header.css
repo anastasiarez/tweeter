@@ -1,0 +1,12 @@
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background-color: #f0ec1173;
+}
+
+img{
+  padding-top: 150px;
+}
