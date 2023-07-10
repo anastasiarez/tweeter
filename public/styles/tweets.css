@@ -2,7 +2,11 @@
   border: 3px solid black;
   border-radius: 5px;
   margin-bottom: 10px;
+  transition: box-shadow 0.3s ease;
+}
 
+.article-container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #article-header {
@@ -39,12 +43,19 @@
   align-items: center;
 }
 
+
 .timestamp {
   margin-right: auto;
   margin-left: 10px;
   font-size: small;
 }
 
-.icons i{
+.icons i {
   margin-right: 10px;
+  color: #4056A1;
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color: rgba(255, 255, 0, 0.478)
 }
