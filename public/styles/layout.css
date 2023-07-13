@@ -24,3 +24,7 @@ body {
   flex-direction: column;
   background-color: #f4f1ec;
 }
+
+footer{
+  padding-left: 10px;
+}

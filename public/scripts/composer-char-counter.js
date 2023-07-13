@@ -1,3 +1,5 @@
+// function to track tweet char lengths
+
 $(document).ready(function() {
   $('.new-tweet textarea').keydown(function(e) {
     const maxLength = 140;
