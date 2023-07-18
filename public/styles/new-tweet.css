@@ -24,6 +24,11 @@
   border: 0px;
 }
 
+.new-tweet button[disabled] {
+  background-color: gray;
+}
+
+
 .new-tweet output{
   color: black;
   font-family: 'Bungee';

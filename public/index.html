@@ -3,6 +3,8 @@
 
 <head>
   <!-- Meta Information -->
+
+  
   <title>Tweeter - Home Page</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -34,10 +36,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/scripts/composer-char-counter.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/timeago.js@latest"></script>
+  <script src="/scripts/char-counter.js"></script>
 
 
 </head>
@@ -69,14 +69,14 @@
 
       <!-- <h2>Compose a Tweet</h2> -->
 
-      <form action="/tweets" method="POST">
+      <form id="form">
 
         <div>
           <label for="tweet-text">What are you humming about?</label>
         </div>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
-          <button type="submit">Tweet</button>
+          <button type="submit" id="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
@@ -90,6 +90,8 @@
   <footer>
     <h6>developed by A. Reznichenko. 2023</h6>
   </footer>
+  <script src="/scripts/client.js"></script>
+
 </body>
 
 </html>

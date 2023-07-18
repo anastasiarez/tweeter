@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="greeting">Hello, Anastasia!</p>
+  <script>
+    $(document).ready(function() {
+      $("p").click(function() {
+        alert("Clicked!");
+      });
+    });
+  </script>
+  <img class="panda" src="/images/panda.png">
+  <style>
+    .panda {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <script>
+    $(".panda").click(function() {
+      $("div").fadeTo(1000, 0.2, function() {
+        alert("Well done, Anastasia!");
+      });
+    });
+  </script>
+  <div>
+    <h1 id="h1">Hover over me</h1>
+    <h2 id="h2">Click me</h2>
+    <h3 id="h3">Double click me</h3>
+    <h4 id="h4">Leave me alone</h4>
+  </div>
+
+  <!-- <script>
+    $("#h1").hover(function() {
+      $(this).hide();
+    });
+
+    $("#h2").click(function() {
+      $(this).hide();
+    });
+
+    $("#h3").dblclick(function() {
+      $(this).hide();
+    });
+
+    $("#h4").mouseleave(function() {
+      $(this).hide();
+    });
+  </script> -->
+</body>
+
+</html>
