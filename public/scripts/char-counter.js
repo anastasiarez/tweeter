@@ -22,7 +22,7 @@
 
 
 $(document).ready(function() {
-  const MAX_LENGTH = 10;
+  const MAX_LENGTH = 140;
   
   $('.new-tweet textarea').keydown(function(e) {
     let currentLength = $(this).val().length + 1;

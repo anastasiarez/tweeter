@@ -4,35 +4,32 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-  function getHourDiff(start, end) {
-    return Math.floor((end - start) / 3600000)
-  }
-  
+function getHourDiff(start, end) {
+  return Math.floor((end - start) / 3600000);
+}
+
 
 
 // 1 - make a call to the server & show the tweets
 
-function fetchTweets() {
-  // get all tweets from the server
+function fetchTweets() {// get all tweets from the server
   $.ajax({
     url: "/tweets",
     method: 'get'
-  }).done(data => {
-    // data is all tweets
-    console.log('TWEETS:', data)
-    renderTweets(data)
-  })
+  }).done(data => {// data is all tweets
+    console.log('TWEETS:', data);
+    renderTweets(data);
+  });
 }
 
-// 2, call function above
-fetchTweets()
+fetchTweets();
 
+
+// 2 - Add a tweet to a container (empty the containerer from any previous information, create tweet using a f-n, and add it to a container)
 
 function renderTweets(tweets) {
-  const $tweetsContainer = $('#tweets-container'); // The $ prefix is often used to indicate that the variable holds a jQuery object.
-
+  const $tweetsContainer = $('#tweets-container');
   $tweetsContainer.empty();
-
   tweets.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
     $tweetsContainer.append($tweet);
@@ -40,16 +37,15 @@ function renderTweets(tweets) {
 }
 
 
-
 function createTweetElement(tweet) {
   const { name, avatars, handle } = tweet.user;
   const { text } = tweet.content;
-  const createdAt = new Date(tweet.created_at).getSeconds()
+  const createdAt = new Date(tweet.created_at).getSeconds();
   const rtf1 = new Intl.RelativeTimeFormat('en', { style: 'short' });
 
 
-const timeEnd   = new Date().getSeconds()
-const hourDiff  = getHourDiff(timeEnd, createdAt)
+  const timeEnd = new Date().getSeconds();
+  const hourDiff = getHourDiff(timeEnd, createdAt);
 
   const $tweet = `
   <article class="tweet">
@@ -73,7 +69,7 @@ const hourDiff  = getHourDiff(timeEnd, createdAt)
   </div>
   </footer>
   </article>
-  `
+  `;
 
   return $tweet;
 }
@@ -82,32 +78,21 @@ const hourDiff  = getHourDiff(timeEnd, createdAt)
 function registerSubmit() {
 
   function sendTweet(event) {
-    event.preventDefault()
-    console.log('event.target', event.target)
-    const tweetText = event.target['tweet-text'].value
-  
-    const dataToSend = {
-      user: {
-        name: "Anastasia",
-        handle: "@ananas",
-        avatars: "/images/profile-hex.png"
-      },
-      text: tweetText
-    }
-  
+    event.preventDefault();
+    console.log('event.target', event.target);
+
+    const formData = $(event.target).serialize();
+
     $.ajax({
       url: "/tweets",
       method: 'post',
-      data: dataToSend
+      data: formData
     }).done(function() {
-      fetchTweets()
+      fetchTweets();
     });
   }
-
-
-  $('#form').submit(sendTweet)
+  $('#form').submit(sendTweet);
 }
 
-
-registerSubmit()
+registerSubmit();
 
