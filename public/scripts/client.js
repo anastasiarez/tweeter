@@ -37,18 +37,18 @@ $(document).ready(function() {
 
     const $tweet = `
     
+
   <article class="tweet">
   <div>
-  <header id="tweet-header">
-  <img class="user-icon" src="${avatars}" alt="User Avatar">
-  <h4>${name}</h4>
-  </div>
-  <p class="handle">${handle}</p>
+    <header id="tweet-header">
+      <img class="user-icon" src="${avatars}" alt="User Avatar">
+      <h4>${name}</h4>
+      </div>
+    <p class="handle">${handle}</p>
   </header>
   <div class="tweet-content">
-  <p>${text}</p>
+    <p>${escapeHTML(text)}</p>
   </div>
-  
 
   <footer id="tweet-footer">
  <p class="timestamp" title="${createdAt.toISOString()}">${timeago.format(createdAt)}</p>
@@ -84,7 +84,14 @@ $(document).ready(function() {
     $('#form').submit(sendTweet);
   }
 
+  function escapeHTML(text) {
+    const element = document.createElement('div');
+    element.innerText = text;
+    return element.innerHTML;
+  }
+
   fetchTweets();
   registerSubmit();
   $("p.timestamp").timeago();
 });
+
