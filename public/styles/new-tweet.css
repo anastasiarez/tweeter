@@ -31,14 +31,18 @@
 .new-tweet button:hover {
   background-color: #e9f10686;
 }
+
 .new-tweet button[disabled] {
   background-color: gray;
 }
 
-
 .new-tweet output{
   color: black;
   font-family: 'Bungee';
+}
+
+.new-tweet output.counter-exceeded {
+  color: red;
 }
 
 .new-tweet div {

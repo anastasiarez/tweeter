@@ -1,0 +1,9 @@
+#error-messages {
+  margin-top: 15px;
+  padding: 10px;
+  border: 3px red solid;
+  font-size: 1rem;
+  font-family: 'Source Sans 3', sans-serif;
+  margin-bottom: 0;
+  font-weight: bold;
+}
