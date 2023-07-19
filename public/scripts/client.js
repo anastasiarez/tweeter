@@ -18,8 +18,6 @@ $(document).ready(function() {
   }
 
 
-
-
   // 2 - Add a tweet to a container (empty the containerer from any previous information, create tweet using a f-n, and add it to a container)
 
   function renderTweets(tweets) {
@@ -38,6 +36,7 @@ $(document).ready(function() {
     const createdAt = new Date(tweet.created_at);
 
     const $tweet = `
+    
   <article class="tweet">
   <div>
   <header id="tweet-header">

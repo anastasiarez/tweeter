@@ -1,40 +1,18 @@
 // function to track tweet char lengths
 
-// $(document).ready(function() {
-//   const MAX_LENGTH = 140;
-
-//   $('.new-tweet textarea').keydown(function(e) {
-//     let currentLength = $(this).val().length
-//     console.log(currentLength)
-//     $('.counter').text(MAX_LENGTH - currentLength);
-
-//     if (currentLength > MAX_LENGTH) {
-//       $('.counter').css('color', 'red');
-//       $('#submit').attr('disabled', true);
-
-//     } else {
-//       $('.counter').text(MAX_LENGTH - currentLength);
-//       $('.counter').css('color', 'black');
-//       $('#submit').attr('disabled', false);
-//     }
-//   });
-// });
-
-
 $(document).ready(function() {
-  const MAX_LENGTH = 140;
-  
-  $('.new-tweet textarea').keydown(function(e) {
-    let currentLength = $(this).val().length + 1;
+  $('.new-tweet textarea').on('input', function() {
+    const maxLength = 140;
+    const currentLength = $(this).val().length;
     console.log(currentLength);
-    $('.counter').text(MAX_LENGTH - currentLength );
-
-    if (currentLength > MAX_LENGTH) {
-      $('.counter').css('color', 'red');
-      $('#submit').prop('disabled', true);
+    const remainingChars = maxLength - currentLength;
+    
+    $('.counter').text(remainingChars);
+    
+    if (remainingChars < 0) {
+      $('.counter').addClass('counter-exceeded');
     } else {
-      $('.counter').css('color', 'black');
-      $('#submit').prop('disabled', false);
+      $('.counter').removeClass('counter-exceeded');
     }
   });
 });
