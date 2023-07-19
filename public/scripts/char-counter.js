@@ -26,6 +26,7 @@ $(document).ready(function() {
 
       // Disable the button
       $('#submit').attr('disabled', true);
+      
     } else {
       // Enable the button
       $('#submit').attr('disabled', false);
