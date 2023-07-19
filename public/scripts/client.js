@@ -27,7 +27,7 @@ $(document).ready(function() {
     $tweetsContainer.empty();
     tweets.forEach((tweet) => {
       const $tweet = createTweetElement(tweet);
-      $tweetsContainer.append($tweet);
+      $tweetsContainer.prepend($tweet);
     });
   }
 
@@ -35,7 +35,6 @@ $(document).ready(function() {
   function createTweetElement(tweet) {
     const { name, avatars, handle } = tweet.user;
     const { text } = tweet.content;
-
     const createdAt = new Date(tweet.created_at);
 
     const $tweet = `

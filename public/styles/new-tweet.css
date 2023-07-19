@@ -16,6 +16,10 @@
   border-right: none;
 }
 
+#button-id{
+  margin-bottom: 50px;
+}
+
 .new-tweet button {
   background-color: #4056A1;
   color: #FFFFFF;
@@ -24,6 +28,9 @@
   border: 0px;
 }
 
+.new-tweet button:hover {
+  background-color: #e9f10686;
+}
 .new-tweet button[disabled] {
   background-color: gray;
 }
