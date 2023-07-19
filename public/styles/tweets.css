@@ -30,7 +30,7 @@
 }
 
 .handle {
-  margin-left: auto;
+  margin-left: 10px;
 }
 
 .tweet-content {
@@ -47,7 +47,7 @@
 .timestamp {
   margin-right: auto;
   margin-left: 10px;
-  font-size: small;
+  font-size: 24px;
 }
 
 .icons i {
@@ -58,4 +58,10 @@
 
 .icons i:hover {
   color: rgba(255, 255, 0, 0.478)
+}
+
+#tweet-footer{
+  display: flex;
+  padding-left: 0;
+
 }
