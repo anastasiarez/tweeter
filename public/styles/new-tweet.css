@@ -2,7 +2,6 @@
   width: 100%;
   padding-bottom: 10px;
   padding-top: 20px;
-  
 }
 
 .new-tweet textarea {
@@ -29,7 +28,7 @@
 }
 
 .new-tweet button:hover {
-  background-color: #e9f10686;
+  background-color: orange;
 }
 
 .new-tweet button[disabled] {

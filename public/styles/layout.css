@@ -23,7 +23,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-
 }
 
 main {
@@ -36,17 +35,13 @@ main {
 }
 
 
-
-
-/* @media only screen and (max-width: 650px) {
+@media only screen and (max-width: 900px) {
   body {
-    transform: scale(0.8);
-    transform-origin: top;
+    display: flex;
+    flex-direction: column;
   }
 
-  .container {
-    padding-left: 0;
-    padding-right: 0;
+  main {
+    padding-top: 50px;
   }
-
-} */
+}
