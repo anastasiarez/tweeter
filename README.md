@@ -10,8 +10,7 @@ Mobile View:
 
 Desktop View:
 
-!["Desktop"]
-(https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/desktop.jpg)
+!["Desktop"](https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/desktop.jpg)
 
 
 
