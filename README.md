@@ -4,9 +4,11 @@ Tweeter is a simple, single-page Twitter clone.
 
 The app was designed by practicing HTML, CSS, JS, jQuery and AJAX for front-end, and Node, Express for back-end.
 
-!["Mobile"]
-(https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/mobile.jpg)
+Mobile View:
 
+!["Mobile"](https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/mobile.jpg)
+
+Desktop View:
 
 !["Desktop"]
 (https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/desktop.jpg)
