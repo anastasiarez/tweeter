@@ -6,11 +6,11 @@ The app was designed by practicing HTML, CSS, JS, jQuery and AJAX for front-end,
 
 Mobile View:
 
-!["Mobile"](https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/mobile.jpg)
+!["Mobile"](docs/mobile.jpg)
 
 Desktop View:
 
-!["Desktop"](https://github.com/anastasiarez/tweeter/blob/072d48fc863a65946c97a96f0140201f0140c9cb/desktop.jpg)
+!["Desktop"](docs/desktop.jpg)
 
 
 
