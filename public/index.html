@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- Meta Information -->
 
   <title>Tweeter - Home Page</title>
@@ -21,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:wght@300&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/normalize.css" />
 
 
   <!-- App CSS -->
@@ -39,8 +43,8 @@
   <script src="/scripts/char-counter.js"></script>
   <script src="/scripts/client.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.full.min.js"
-  integrity="sha512-wb3lqal2VtYhmlPAr232VP+Zus676CFAEYdywxIUSxG6F/X9WhN6SpREkWUdwBvMpd6gCKuKTGHhdum6m1wOvQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-wb3lqal2VtYhmlPAr232VP+Zus676CFAEYdywxIUSxG6F/X9WhN6SpREkWUdwBvMpd6gCKuKTGHhdum6m1wOvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -51,36 +55,34 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <header>
+
+  <header id="user-icon">
     <div>
       <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
       <h2>Anastasia UA</h2>
     </div>
   </header>
 
-  <!-- Page-specific (main) content -->
 
   <main class="container">
-    <section class="new-tweet">
-      <div id="error-messages" style="display: none;"></div>
-      <form id="form">
-        <div>
-          <label for="tweet-text">What are you humming about?</label>
-        </div>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div id="button-id">
-          <button id="submit" type="submit" disabled>Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section id="tweets-container"></section>
+    <div class="layout">
+      <section class="new-tweet">
+        <div id="error-messages" style="display: none;"></div>
+        <form id="form">
+          <div>
+            <label for="tweet-text">What are you humming about?</label>
+          </div>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="button-id">
+            <button id="submit" type="submit" disabled>Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </div>
   </main>
   <footer>
-    <h6>tweeter. 2023</h6>
   </footer>
 </body>
 

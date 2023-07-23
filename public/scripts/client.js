@@ -29,13 +29,13 @@ $(document).ready(function() {
 
     const $tweet = `
     <article class="tweet">
-      <div>
+     
         <header id="tweet-header">
           <img class="user-icon" src="${avatars}" alt="User Avatar">
           <h4>${name}</h4>
-          </div>
-        <p class="handle">${handle}</p>
-      </header>
+          <p class="handle">${handle}</p> 
+        </header>
+
       <div class="tweet-content">
         <p>${escapeHTML(text)}</p>
       </div>
@@ -67,7 +67,10 @@ $(document).ready(function() {
       data: formData
     }).done(function() {
       // Clear the tweet input field after successful submission
+      // Reset tweet text area and character counter after successful submission
+
       $('#tweet-text').val('');
+      $('.counter').text('140');
 
       // Fetch and update the tweets after the new tweet is posted
       fetchTweets();
