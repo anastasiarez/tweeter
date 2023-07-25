@@ -8,6 +8,9 @@ $(document).ready(function() {
       method: 'get'
     }).done(data => {
       renderTweets(data);
+    }).fail((jqXHR, textStatus, errorThrown) => {
+      // Handle the error here
+      console.error("Error fetching tweets:", errorThrown);
     });
   }
 
@@ -74,6 +77,9 @@ $(document).ready(function() {
 
       // Fetch and update the tweets after the new tweet is posted
       fetchTweets();
+    }).fail((jqXHR, textStatus, errorThrown) => {
+      // Handle the error here
+      console.error("Error posting tweet:", errorThrown);
     });
   }
 
