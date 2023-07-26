@@ -9,7 +9,7 @@ $(document).ready(function() {
     }).done(data => {
       renderTweets(data);
     }).fail((jqXHR, textStatus, errorThrown) => {
-      // Handle the error here
+      // Handle the error
       console.error("Error fetching tweets:", errorThrown);
     });
   }
@@ -32,13 +32,11 @@ $(document).ready(function() {
 
     const $tweet = `
     <article class="tweet">
-     
-        <header id="tweet-header">
+          <header id="tweet-header">
           <img class="user-icon" src="${avatars}" alt="User Avatar">
           <h4>${name}</h4>
           <p class="handle">${handle}</p> 
         </header>
-
       <div class="tweet-content">
         <p>${escapeHTML(text)}</p>
       </div>
@@ -57,17 +55,19 @@ $(document).ready(function() {
 
   // Function to send a tweet
   function sendTweet(event) {
-    event.preventDefault();
-    console.log('event.target', event.target);
+    event.preventDefault(); //prevent page reload
 
-    // Serialize the form data to send it to the server
-    const formData = $(event.target).serialize();
+    const data = $(event.target).serialize();
+    const text = event.target.text.value;
+    if (text.trim() === '') { //check that tweet is not empty
+      return;
+    }
 
     // Make an AJAX request to post the tweet data to the server
     $.ajax({
       url: "/tweets",
       method: 'post',
-      data: formData
+      data
     }).done(function() {
       // Clear the tweet input field after successful submission
       // Reset tweet text area and character counter after successful submission
@@ -78,12 +78,13 @@ $(document).ready(function() {
       // Fetch and update the tweets after the new tweet is posted
       fetchTweets();
     }).fail((jqXHR, textStatus, errorThrown) => {
-      // Handle the error here
+      // Handle the error
       console.error("Error posting tweet:", errorThrown);
     });
   }
 
-  // Function to escape HTML characters to prevent XSS
+  // Function to encode HTML characters in the user-generated content before displaying it on a web page.
+
   function escapeHTML(text) {
     const element = document.createElement('div');
     element.innerText = text;
@@ -96,9 +97,9 @@ $(document).ready(function() {
   }
 
   // Call the functions to fetch tweets, register submit event, and apply timeago plugin
+
   fetchTweets();
   registerSubmit();
-
   $("p.timestamp").timeago();
 });
 

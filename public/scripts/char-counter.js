@@ -1,40 +1,53 @@
-// function to track tweet char lengths
+
+function showError(message) {
+  $('#error-messages').text(message).slideDown();
+  $('#submit').attr('disabled', true);
+  // Disable the submit button when error message is shown
+}
+
+function hideError() {
+  $('#error-messages').slideUp();
+  $('#submit').attr('disabled', false);
+  // Enable the submit button when error message is hidden
+}
+
+function tweetTextValidation() {
+  const tweetText = $('#tweet-text').val();
+  const MAX_LENGTH = 140;
+  const remainingChars = MAX_LENGTH - tweetText.length;
+
+  // Update the character counter
+  $('.counter').text(remainingChars);
+
+  // Check if textarea is empty or character limit is exceeded
+  if (remainingChars < 0) {
+    showError('This message is exceeding the maximum length of 140 characters. Please try again.');
+  } else {
+    hideError();
+  }
+
+  // Toggle the 'counter-exceeded' class based on the character limit
+  $('.counter').toggleClass('counter-exceeded', remainingChars < 0);
+}
 
 $(document).ready(function() {
-  function showError(message) {
-    $('#error-messages').text(message).slideDown();
-  }
+  // Disable the submit button when the page is loaded
+  $('#submit').attr('disabled', true);
 
-  function hideError() {
-    $('#error-messages').slideUp();
-  }
-
+  // Attach the input event listener to the textarea
   $('.new-tweet textarea').on('input', function() {
-    const MAX_LENGTH = 140;
-    const currentLength = $(this).val().length;
-    const remainingChars = MAX_LENGTH - currentLength;
+    tweetTextValidation();
+  });
 
-    // Update the character counter
-    $('.counter').text(remainingChars);
-
-    // Check if textarea is empty or character limit is exceeded
-    if (currentLength === 0 || remainingChars < 0) {
-
-      if (currentLength > 140) {
-        showError('This message is exceeding the maximum length of 140 characters. Please try again.');
-      }
-
-      // Disable the button
-      $('#submit').attr('disabled', true);
-      
-    } else {
-      // Enable the button
-      $('#submit').attr('disabled', false);
-      hideError()
+  // Attach the submit event listener to the form
+  $('#form').submit(function(event) {
+    const tweetText = $('#tweet-text').val().trim();
+    if (tweetText === '') {
+      showError('Your tweet is empty. Please add a message');
     }
-
-    // Toggle the 'counter-exceeded' class based on the character limit
-    $('.counter').toggleClass('counter-exceeded', remainingChars < 0);
   });
 });
+
+// Initial call to update the tweet button state
+tweetTextValidation();
 

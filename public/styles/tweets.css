@@ -43,6 +43,8 @@
 .tweet-content {
   margin: 10px;
   border-bottom: 3px solid black;
+  word-wrap: break-word;
+  max-width: 650px;
 }
 
 .icons {

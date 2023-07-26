@@ -1,4 +1,4 @@
-.new-tweet div label{
+.new-tweet div label {
   width: 100%;
   padding-bottom: 10px;
   padding-top: 20px;
@@ -8,6 +8,7 @@
   background-color: #f4f1ec;
   width: 100%;
   height: 50px;
+  padding: 5px;
   font-size: 1em;
   border-bottom: 3px solid black;
   border-top: none;
@@ -15,7 +16,19 @@
   border-right: none;
 }
 
-#button-id{
+label[for="tweet-text"] {
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+
+#tweet-text::placeholder {
+  font-size: 15px;
+  color: gray;
+  font-style: italic;
+}
+
+#button-id {
   margin-bottom: 50px;
 }
 
@@ -35,7 +48,7 @@
   background-color: gray;
 }
 
-.new-tweet output{
+.new-tweet output {
   color: black;
   font-family: 'Bungee';
 }
@@ -50,4 +63,3 @@
   justify-content: space-between;
   padding-bottom: 10px;
 }
-
